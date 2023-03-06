@@ -1,7 +1,7 @@
 # Script Settings and Resources
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 library(tidyverse)
-
+library(GGally)
 
 
 
@@ -13,4 +13,13 @@ week7_tbl <- read_csv(file = "../data/week3.csv") %>%
   filter(q6 == 1) %>%
   select(-q6) %>%
   mutate(timeSpent = difftime(timeEnd, timeStart, units = "mins"))
+
+
+
+
+
+# Visualization
+ggpairs(week7_tbl[,5:13]) %>%
+  ggsave("../figs/fig0.png",.)
+
 
