@@ -20,6 +20,6 @@ week7_tbl <- read_csv(file = "../data/week3.csv") %>%
 
 # Visualization
 ggpairs(week7_tbl[,5:13]) %>%
-  ggsave("../figs/fig0.png",.)
+  ggsave("../figs/fig0.png", device = "png",.)
 
 
