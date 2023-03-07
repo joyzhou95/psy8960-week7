@@ -19,7 +19,12 @@ week7_tbl <- read_csv(file = "../data/week3.csv") %>%
 
 
 # Visualization
-ggpairs(week7_tbl[,5:13]) %>%
-  ggsave("../figs/fig0.png", device = "png",.)
+(ggpairs(week7_tbl[,5:13])) %>%
+  ggsave("../figs/fig0.png",.)
 
+fig1 <- ggplot(week7_tbl, aes(timeStart, q1)) +
+                 geom_point() +
+                 ylab("Q1 Score") + 
+                 xlab("Date of Experiment")
+ggsave("../figs/fig1.png", fig1)  
 
