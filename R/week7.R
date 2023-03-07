@@ -23,8 +23,16 @@ week7_tbl <- read_csv(file = "../data/week3.csv") %>%
   ggsave("../figs/fig0.png",.)
 
 fig1 <- ggplot(week7_tbl, aes(timeStart, q1)) +
-                 geom_point() +
-                 ylab("Q1 Score") + 
-                 xlab("Date of Experiment")
+  geom_point() +
+  ylab("Q1 Score") + 
+  xlab("Date of Experiment")
 ggsave("../figs/fig1.png", fig1)  
+
+fig2 <- ggplot(week7_tbl, aes(q1, q2, color = gender)) +
+  geom_point(position = "jitter") +
+  labs(color = "Participant Gender")
+ggsave("../figs/fig2.png", fig2)  
+
+
+
 
