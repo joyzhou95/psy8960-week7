@@ -33,10 +33,19 @@ fig2 <- ggplot(week7_tbl, aes(q1, q2, color = gender)) +
   labs(color = "Participant Gender")
 ggsave("../figs/fig2.png", fig2)  
 
-fig3 <- ggplot(week7_tbl, aes(q1, q2, group = gender)) +
+fig3 <- ggplot(week7_tbl, aes(q1, q2)) +
   geom_point(position = "jitter") +
-  facet_wrap(gender~.) +
+  facet_wrap(.~gender) +
   xlab("Score on Q1") +
   ylab("Score on Q2")
 ggsave("../figs/fig3.png", fig3)  
+
+fig4 <- ggplot(week7_tbl, aes(gender,timeSpent)) + 
+  geom_boxplot() +
+  xlab("Gender") +
+  ylab("Time Elapsed (mins)")
+ggsave("../figs/fig4.png", fig4)  
+
+
+
 
