@@ -49,7 +49,7 @@ ggsave("../figs/fig4.png", fig4, width = 7, height = 4, units = "in")
 fig5 <- ggplot(week7_tbl, aes(q5, q7, color = condition)) + 
   geom_point(position = "jitter") +
   geom_smooth(method = "lm", se = F) +
-  theme(legend.position = "bottom", legend.background = element_rect(fill = "#DFDFDF"), legend.title = element_text(size =10)) +
+  theme(legend.position = "bottom", legend.background = element_rect(fill = "#E0E0E0"), legend.title = element_text(size =10)) +
   labs(color = "Experimental Condition", x = "Score on Q5", y = "Score on Q7")
 ggsave("../figs/fig5.png", fig5, width = 7, height = 4, units = "in") 
 
