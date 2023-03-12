@@ -19,6 +19,10 @@ week7_tbl <- read_csv(file = "../data/week3.csv") %>%
 
 
 # Visualization
+week7_tbl %>%
+  select(starts_with("q")) %>%
+  ggpairs()
+
 (ggpairs(week7_tbl[,5:13])) %>%
   ggsave("../figs/fig0.png",.)
 
